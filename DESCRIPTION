@@ -20,5 +20,6 @@ Imports:
     magrittr,
     rlang
 Suggests: knitr,
-    rmarkdown
+    rmarkdown,
+    testthat
 VignetteBuilder: knitr
