@@ -10,6 +10,7 @@ test_that("fars_read works as expected", {
   good_file <- paste0(path, "/accident_2014.csv.bz2")
   bad_file <- paste0(path, "/accident_2012.csv.bz2")
   expect_error(fars_read(bad_file))
-  expect_success(fars_read(good_file))
+  good_data <- fars_read(good_file)
+  expect_equal(dim(good_data), c(30056, 50))
 })
 
