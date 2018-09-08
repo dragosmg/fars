@@ -29,51 +29,37 @@ sample <- system.file("extdata", "accident_2014.csv.bz2", package = "fars")
 head(fars_read(sample))
 ```
 
+## Create filenames from year input
 
-are long form documentation commonly included in packages. Because they are part of the distribution of the package, they need to be as compact as possible. The `html_vignette` output type provides a custom style sheet (and tweaks some options) to ensure that the resulting html is as small as possible. The `html_vignette` format:
+In order to create a filename in the correct format, `make_filename` function can be used:
 
-- Never uses retina figures
-- Has a smaller default figure size
-- Uses a custom CSS stylesheet instead of the default Twitter Bootstrap style
-
-## Vignette Info
-
-Note the various macros within the `vignette` section of the metadata block above. These are required in order to instruct R how to build the vignette. Note that you should change the `title` field and the `\VignetteIndexEntry` to match the title of your vignette.
-
-## Styles
-
-The `html_vignette` template includes a basic CSS theme. To override this theme you can specify your own CSS in the document metadata as follows:
-
-    output: 
-      rmarkdown::html_vignette:
-        css: mystyles.css
-
-## Figures
-
-The figure sizes have been customised so that you can easily put two images side-by-side. 
-
-```{r, fig.show='hold'}
-plot(1:10)
-plot(10:1)
+```{r}
+library(fars)
+library(magrittr)
+file_2013 <- make_filename(2013)
+file_2013 <- paste0(system.file("extdata", package = "fars"), "/",file_2013)
 ```
 
-You can enable figure captions by `fig_caption: yes` in YAML:
+## Reading the file 
 
-    output:
-      rmarkdown::html_vignette:
-        fig_caption: yes
+The filename created above can be read using `fars__read` function:
 
-Then you can use the chunk option `fig.cap = "Your figure caption."` in **knitr**.
-
-## More Examples
-
-You can write math expressions, e.g. $Y = X\beta + \epsilon$, footnotes^[A footnote here.], and tables, e.g. using `knitr::kable()`.
-
-```{r, echo=FALSE, results='asis'}
-knitr::kable(head(mtcars, 10))
+```{r}
+fars_read(file_2013)
 ```
 
-Also a quote using `>`:
+## Data summary
 
-> "He who gives up [code] safety for [code] speed deserves neither."
-([via](https://twitter.com/hadleywickham/status/504368538874703872))
+Summary of fatalities as a function of month and year can be seen using `fars_summarize_years` function:
+
+```{r}
+fars_summarize_years(2013)
+```
+
+## Map of fatalities
+
+Fatalities for a given state and year can be seen on a map using `fars_map_state` function:
+
+```{r}
+fars_map_state(1, 2013)
+```
