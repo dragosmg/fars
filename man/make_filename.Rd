@@ -16,5 +16,7 @@ a character vector representing a file name
 Take a year and build a character vector representing the file name.
 }
 \examples{
+\dontrun{
 make_filename(2014)
+}
 }

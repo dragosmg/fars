@@ -22,5 +22,7 @@ If one of the years used as input does not exist the function will
   invalid year will have a corresponding empty data frame in the output list.
 }
 \examples{
+\dontrun{
 fars_read_years(2013:2015)
+}
 }

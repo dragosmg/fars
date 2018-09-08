@@ -17,5 +17,7 @@ a data frame with the number of accidents for every month for the
 Count the monthly number of accidents for selected years
 }
 \examples{
+\dontrun{
 fars_summarize_years(c(2013, 2015))
+}
 }
