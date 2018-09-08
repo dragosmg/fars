@@ -1,6 +1,6 @@
 ---
-title: "Vignette Title"
-author: "Vignette Author"
+title: "Examples for the FARS package"
+author: "Dragos Moldovan-Grunfeld"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
