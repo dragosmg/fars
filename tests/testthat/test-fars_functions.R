@@ -16,5 +16,4 @@ test_that("fars_read works as expected", {
 
 test_that("fars_read_years works", {
   expect_warning(fars_read_years(2012))
-
 })
