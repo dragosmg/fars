@@ -16,7 +16,19 @@ knitr::opts_chunk$set(
 )
 ```
 
-This vignette describes the step necessary to import and use FARS data. 
+This vignette describes the step necessary to import and use FARS data.
+
+
+There's not much to say about how to use it:
+```{r}
+library(fars)
+
+# use sample fars file included in the package 
+sample <- system.file("extdata", "accident_2014.csv.bz2", package = "fars")
+
+head(fars_read(sample))
+```
+
 
 are long form documentation commonly included in packages. Because they are part of the distribution of the package, they need to be as compact as possible. The `html_vignette` output type provides a custom style sheet (and tweaks some options) to ensure that the resulting html is as small as possible. The `html_vignette` format:
 
