@@ -14,3 +14,7 @@ test_that("fars_read works as expected", {
   expect_equal(dim(good_data), c(30056, 50))
 })
 
+test_that("fars_read_years works", {
+  expect_warning(fars_read_years(2012))
+
+})
