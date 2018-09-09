@@ -4,7 +4,7 @@ Title: Import FARS Data
 Version: 0.1.0
 Author: c(
     person("Dragos", "MG", email = "dmg@example.com", role = c("aut", "cre"))) 
-Maintainer: The package maintainer <yourself@somewhere.net>
+Maintainer: The package maintainer <dmg@somewhere.net>
 Description: A package written as assignment for the R Packages course.
 URL: https://github.com/DragosMG/fars
 BugReports: https://github.com/DragosMG/fars/issues
