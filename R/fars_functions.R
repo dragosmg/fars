@@ -42,7 +42,9 @@ fars_read <- function(filename) {
 #' }
 make_filename <- function(year) {
         year <- as.integer(year)
-        sprintf("accident_%d.csv.bz2", year)
+        file <- sprintf("accident_%d.csv.bz2", year)
+        path <- paste0(system.file(package = "fars"), "/extdata")
+        paste0(path, "/", file)
 }
 
 #' Extract the month from every accident in the data set
