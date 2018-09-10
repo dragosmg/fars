@@ -22,7 +22,15 @@ test_that("fars_read_years works", {
   expect_warning(fars_read_years(2012), "invalid year: 2012")
 })
 
+test_that("fars_summarize_years() works", {
+ summary_2013 <- fars_summarize_years(2013)
+ expect_is(summary_2013, "tbl_df")
+ expect_equal(dim(summary_2013), c(12, 2))
+ expect_equal(names(summary_2013), c("MONTH", "2013"))
+})
+
 test_that("fars_map_state", {
   expect_error(fars_map_state(state.num = 70, year = 2013),
                "invalid STATE number: 70")
+  expect_null(fars_map_state(11, 2013))
 })
